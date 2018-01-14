@@ -1,0 +1,57 @@
+struct man{
+	int id;
+	struct man *next;
+}
+
+struct man group[101];
+
+int initialize(struct man *init,int sum){
+	int i;
+	i=1;
+	while(i<sum||i==sum){
+		init[i].id=i;
+		init[i].next=init+(i+1);
+		i=i+1;
+	}
+	init[sum].next=init+1;
+	return 0;
+}
+
+int main(){
+	int sum;
+	int lucky;
+	int count;
+	sum=getint();
+	lucky=getint();
+	if(sum>100||sum<1)
+		return 0;
+	if(lucky>1000||lucky<1)
+		return 0;
+
+ 	initialize(group,sum);
+
+	struct man *head;
+	struct man *tail;
+	head=group+1;
+	tail=group+sum;
+	count=1;
+	while(sum>1){
+		if(count==lucky){
+			putint(head[0].id);
+			putchar(10);
+			tail[0].next=head[0].next;
+			head=head[0].next;
+			count=1;
+			sum=sum-1;
+		}
+		else{
+			tail=head;
+			head=head[0].next;
+			count=count+1;
+		}
+	}
+	putint(head[0].id);
+	putchar(10);
+
+	return 0;
+}

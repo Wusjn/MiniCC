@@ -1,0 +1,38 @@
+struct man{
+	int id;
+	struct man *next;
+}
+
+int initialize(struct man *init,int sum){
+	//putint(sizeof(struct man));
+	//putchar(10);
+	int i;
+	i=0;
+	while(i<sum){
+		init[i].id=i+65536;
+		init[i].next=init+(i+1);
+		i=i+1;
+	}
+	init[sum-1].next=init;
+	return 0;
+}
+
+int main(){
+
+	struct man hehe;
+	struct man *head;
+ 	initialize((struct man *)(hehe),1);
+	head=(struct man *)(hehe);
+	putint(head[0].id);
+	putchar(10);
+
+	head=(struct man *)(malloc(sizeof(struct man)));
+	head[0].id=256;
+	putint(head[0].id);
+	putchar(10);
+	putint(hehe.id);
+	putchar(10);
+
+
+	return 0;
+}
