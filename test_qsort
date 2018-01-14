@@ -1,0 +1,61 @@
+int getint();
+int putchar(int c);
+int putint(int i);
+int getchar();
+int f(int a[],int ll,int rr){
+	if(ll>rr||ll==rr) return 0;
+	int l;
+	int r;
+	int m;
+	l=ll;
+	r=rr;
+	m=a[l];
+	while(l!=r){
+		while(l<r&&(m<a[r]||m==a[r]))
+			r=r-1;
+		while(l<r&&(m>a[l]||m==a[l]))
+			l=l+1;
+		if(l<r){
+			int t;
+			t=a[l];
+			a[l]=a[r];
+			a[r]=t;
+		}
+	}
+	a[ll]=a[l];
+	a[l]=m;
+	int l1;
+	int l2;
+	l1=l-1;
+	l2=l+1;
+	m=f(a,ll,l1);
+	m=f(a,l2,rr);
+	return 0;
+}
+
+int main(){
+	int i;
+	int n;
+	int a[10000];
+	i=0;
+	n=10000;
+	while(i<n){
+		a[i]=i%137+i%13;
+		i=i+1;
+	}
+	int l;
+	int r;
+	l=0;
+	r=n-1;
+	l=f(a,l,r);
+	i=0;
+	l=10;
+	while(i<n){
+		r=a[i];
+		r=putint(r);
+		r=putchar(l);
+		i=i+1;
+	}
+	return 0;
+}
+

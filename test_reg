@@ -1,0 +1,183 @@
+int getint();
+int putchar(int c);
+int putint(int i);
+int getchar();
+int f(int x)
+{
+	int a;
+	int b;
+	int c;
+	if(x<2)
+		return 1;
+	else{
+		a=x-1;
+		b=x-2;
+		c=0;
+		c=c+f(a);
+		c=c+f(b);
+		return c;
+	}
+}
+
+int g(int x)
+{
+	int a[40];
+	a[0]=1;
+	a[1]=1;
+	int i;
+	i=2;
+	while(i<x+1)
+	{
+		a[i]=a[i-1]+a[i-2];
+		i=i+1;
+	}
+	return a[x];
+}
+
+int h()
+{
+	int r;
+	int a1;
+	int a2;
+	int a3;
+	int a4;
+	int a5;
+	int a6;
+	int a7;
+	int a8;
+	int a9;
+	int a10;
+	int a11;
+	int a12;
+	int a13;
+	int a14;
+	int a15;
+	int a16;
+	int a17;
+	int a18;
+	int a19;
+	int a20;
+	int a21;
+	int a22;
+	int a23;
+	int a24;
+	int a25;
+	int a26;
+	int a27;
+	int a28;
+	int a29;
+	int a30;
+	int a31;
+	int a32;
+	int a33;
+	int a34;
+	int a35;
+	int a36;
+	a1=1;
+	a2=2;
+	a3=3;
+	a4=4;
+	a5=5;
+	a6=6;
+	a7=7;
+	a8=8;
+	a9=9;
+	a10=10;
+	a11=11;
+	a12=12;
+	a13=13;
+	a14=14;
+	a15=15;
+	a16=16;
+	a17=17;
+	a18=18;
+	a19=19;
+	a20=20;
+	a21=21;
+	a22=22;
+	a23=23;
+	a24=24;
+	a25=25;
+	a26=26;
+	a27=27;
+	a28=28;
+	a29=29;
+	a30=30;
+	a31=31;
+	a32=32;
+	a33=33;
+	a34=34;
+	a35=35;
+	a36=36;
+	r=putint( a1);
+	r=putint( a2);
+	r=putint( a3);
+	r=putint( a4);
+	r=putint( a5);
+	r=putint( a6);
+	r=putint( a7);
+	r=putint( a8);
+	r=putint( a9);
+	r=putint( a10);
+	r=putint( a11);
+	r=putint( a12);
+	r=putint( a13);
+	r=putint( a14);
+	r=putint( a15);
+	r=putint( a16);
+	r=putint( a17);
+	r=putint( a18);
+	r=putint( a19);
+	r=putint( a20);
+	r=putint( a21);
+	r=putint( a22);
+	r=putint( a23);
+	r=putint( a24);
+	r=putint( a25);
+	r=putint( a26);
+	r=putint( a27);
+	r=putint( a28);
+	r=putint( a29);
+	r=putint( a30);
+	r=putint( a31);
+	r=putint( a32);
+	r=putint( a33);
+	r=putint( a34);
+	r=putint( a35);
+	r=putint( a36);
+	int a0;
+	a0=0;
+	while(a0!=10){
+		r=putint(a0);
+		a0=a0+1;
+	}
+	int b;
+	b=10;
+	r=g(b);
+	r=putint(r);
+	r=f(b);
+	r=putint(r);
+	return 0;
+}
+
+int n;
+
+int main(){
+	n=getint();
+	if(n<0||n>30)
+		return 1;
+	int a;
+	int b;
+	int c;
+	int d;
+	c=10;
+	a=f(n);
+	b=g(n);
+	d=putint(a);
+	d=putchar(c);
+	d=putint(b);
+	d=putchar(c);
+	d=h();
+	return 0;
+}
+

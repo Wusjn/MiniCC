@@ -1,0 +1,8 @@
+#!/bin/bash
+
+./mcc < $1;
+./back/riscv a.t  a.s;
+/home/wusj/riscv/bin/riscv64-unknown-elf-gcc -o a.o -c a.s -lm;
+/home/wusj/riscv/bin/riscv64-unknown-elf-gcc -o a.out a.o lib.o -lm;
+/home/wusj/riscv/bin/spike pk a.out;
+

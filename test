@@ -1,0 +1,56 @@
+int getint();
+int putchar(int c);
+int putint(int i);
+int getchar();
+int f(int x)
+{
+	int a;
+	int b;
+	int c;
+	if(x<2)
+		return 1;
+	else{
+		a=x-1;
+		b=x-2;
+		c=0;
+		c=c+f(a);
+		c=c+f(b);
+		return c;
+	}
+}
+
+int g(int x)
+{
+	int a[40];
+	a[0]=1;
+	a[1]=1;
+	int i;
+	i=2;
+	while(i<x+1)
+	{
+		a[i]=a[i-1]+a[i-2];
+		i=i+1;
+	}
+	return a[x];
+}
+
+int n;
+
+int main(){
+	n=getint();
+	if(n<0||n>30)
+		return 1;
+	int a;
+	int b;
+	int c;
+	int d;
+	c=10;
+	a=f(n);
+	b=g(n);
+	d=putint(a);
+	d=putchar(c);
+	d=putint(b);
+	d=putchar(c);
+	return 0;
+}
+
